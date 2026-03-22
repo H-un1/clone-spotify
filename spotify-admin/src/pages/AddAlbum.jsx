@@ -33,6 +33,7 @@ const AddAlbum = () => {
         setDesc("");
         setImage(false);
         setName("");
+        setColor("#121212");
       }
       else{
         toast.error('Something went wrong')

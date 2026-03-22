@@ -1,10 +1,8 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import Navbar from './Navbar'
 import { useParams } from 'react-router-dom'
 import { assets } from '../assets/assets'
 import { PlayerContext } from '../context/PlayerContext'
-import { useState } from 'react'
-import { useEffect } from 'react'
 
 const DisplayAlbum = ({album}) => {
 

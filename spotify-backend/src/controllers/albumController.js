@@ -21,7 +21,7 @@ const addAlbum =  async (req, res) => {
         const album = new albumModel(albumData);
         await album.save();
 
-        res.json({ success: true, message: "Alubm added" })
+        res.json({ success: true, message: "Album added" })
 
     } catch (error) {
 

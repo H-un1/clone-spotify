@@ -1,5 +1,6 @@
 import { createContext, useEffect, useRef, useState } from "react";
 import axios from 'axios'
+import { toast } from 'react-toastify'
 
 export const PlayerContext = createContext();
 
@@ -79,23 +80,20 @@ const PlayerContextProvider = (props) => {
 
     const getSongsData = async () => {
         try {
-            
             const response = await axios.get(`${url}/api/song/list`);
             setSongsData(response.data.songs);
             setTrack(response.data.songs[0]);
-
         } catch (error) {
-            
+            toast.error("Error Occur")
         }
     }
-    
+
     const getAlbumsData = async () => {
         try {
-            
             const response = await axios.get(`${url}/api/album/list`);
             setAlbumsData(response.data.albums)
         } catch (error) {
-            
+            toast.error("Error Occur")
         }
     }
 
