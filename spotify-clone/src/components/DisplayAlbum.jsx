@@ -7,9 +7,7 @@ import { PlayerContext } from '../context/PlayerContext'
 const DisplayAlbum = ({album}) => {
 
     const {id} = useParams()
-    // console.log(id);
     const [albumData, setAlbumData] = useState("");
-    // console.log(albumData);
     const {playWithId, albumsData, songsData} = useContext(PlayerContext)
 
     useEffect(()=> {

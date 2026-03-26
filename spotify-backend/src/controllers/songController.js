@@ -6,21 +6,16 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const addSong = async (req, res) => {
     try {
-        // console.log(req.files);
 
         const name = req.body.name;
         const desc = req.body.desc;
         const album = req.body.album;
         const audioFile = req.files.audio[0];
         const imageFile = req.files.image[0];
-        // console.log(audioFile.path)
-        // console.log("Uploading Audio:", audioFile.path); 
-        // console.log("Uploading Image:", imageFile.path);
 
         const audioUpload = await cloudinary.uploader.upload(audioFile.path, { resource_type: "video" });
         const imageUpload = await cloudinary.uploader.upload(imageFile.path, { resource_type: "auto" });
         const duration = `${Math.floor(audioUpload.duration/60)}:${Math.floor(audioUpload.duration%60)}`
-        // console.log(name, desc, album, audioFile, imageFile, audioUpload, imageUpload);
 
         const songData = {
             name,
