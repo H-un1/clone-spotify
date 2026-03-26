@@ -12,7 +12,6 @@ const ListSong = () => {
         try {
             
             const response = await axios.get(`${url}/api/song/list`);
-            // console.log(response.data)
             if (response.data.success){
                 setData(response.data.songs)
             }

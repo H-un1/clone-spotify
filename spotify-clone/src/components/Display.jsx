@@ -10,13 +10,9 @@ const {albumsData} = useContext(PlayerContext);
 
   const displayRef = useRef();
   const location = useLocation();
-  // console.log(location);
   const isAlbum = location.pathname.includes("album");
-  // console.log(isAlbum);
   const albumId = isAlbum ? location.pathname.split('/').pop() : "";
-  // console.log(albumId);
   const bgColor = isAlbum && albumsData.length > 0 ? albumsData.find((x)=> (x._id == albumId)).bgColor : "#121212";
-  // console.log(bgColor);
   
   useEffect(()=>{
     if (isAlbum) {
